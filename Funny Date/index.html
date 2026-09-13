@@ -1,0 +1,417 @@
+A.i.Atik
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One Very Important Question 💌</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Background Hearts -->
+    <div class="hearts">
+        <span style="left: 5%; animation-duration: 9s;">💗</span>
+        <span style="left: 18%; animation-duration: 12s;">💕</span>
+        <span style="left: 35%; animation-duration: 8s;">💖</span>
+        <span style="left: 52%; animation-duration: 11s;">💗</span>
+        <span style="left: 70%; animation-duration: 10s;">💞</span>
+        <span style="left: 88%; animation-duration: 13s;">❤️</span>
+    </div>
+
+
+    <!-- Main Application -->
+    <main class="app">
+
+
+        <!-- =========================================
+             SCREEN 1 — DATE QUESTION
+        ========================================== -->
+
+        <section id="screen1" class="screen active">
+
+            <div class="card">
+
+                <div class="emoji">
+                    💌
+                </div>
+
+                <h1>
+                    Will you go on a date with me?
+                </h1>
+
+                <p class="subtitle">
+                    This is a very serious question.<br>
+                    Please choose wisely. 😌
+                </p>
+
+                <!-- Yes message appears here -->
+                <div id="yesMessage"></div>
+
+                <div class="buttons" id="firstButtons">
+
+                    <button
+                        class="yes-btn"
+                        onclick="sayYes()">
+                        Yes 💖
+                    </button>
+
+                    <button
+                        class="no-btn"
+                        id="noButton"
+                        onmouseenter="moveNoButton()"
+                        onclick="moveNoButton()">
+                        No 😐
+                    </button>
+
+                </div>
+
+                <!-- Developer Credit -->
+                <div class="developer">
+                    Made with questionable intentions by<br>
+
+                    <strong>
+                        MD ATIQUL ISLAM (Atik)
+                    </strong>
+
+                    <br>
+
+                    atik.cmttiu1001@gmail.com
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SCREEN 2 — AVAILABILITY
+        ========================================== -->
+
+        <section id="screen2" class="screen">
+
+            <div class="card">
+
+                <div class="emoji">
+                    📅
+                </div>
+
+                <h2>
+                    Are you free tomorrow?
+                </h2>
+
+                <p class="subtitle">
+                    Don't worry, I've already mentally planned
+                    our entire date. 😂
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="goToScreen(3)">
+                    Of course 😌
+                </button>
+
+                <div class="developer">
+
+                    Developer:
+                    <strong>
+                        MD ATIQUL ISLAM (Atik)
+                    </strong>
+
+                    <br>
+
+                    atik.cmttiu1001@gmail.com
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SCREEN 3 — FOOD CHOICE
+        ========================================== -->
+
+        <section id="screen3" class="screen">
+
+            <div class="card">
+
+                <div class="emoji">
+                    🍽️
+                </div>
+
+                <h2>
+                    What are you feeling?
+                </h2>
+
+                <p class="subtitle">
+                    Choose carefully.<br>
+                    Your answer may have unexpected
+                    financial consequences. 👀
+                </p>
+
+
+                <!-- Food Cards -->
+
+                <div class="food-grid">
+
+
+                    <!-- Sushi -->
+
+                    <div
+                        class="food"
+                        onclick="chooseFood('Sushi')">
+
+                        <div class="food-icon">
+                            🍣
+                        </div>
+
+                        <strong>
+                            Sushi
+                        </strong>
+
+                        <span>
+                            Fancy decision
+                        </span>
+
+                    </div>
+
+
+                    <!-- Pizza -->
+
+                    <div
+                        class="food"
+                        onclick="chooseFood('Pizza')">
+
+                        <div class="food-icon">
+                            🍕
+                        </div>
+
+                        <strong>
+                            Pizza
+                        </strong>
+
+                        <span>
+                            Classic choice
+                        </span>
+
+                    </div>
+
+
+                    <!-- Burger -->
+
+                    <div
+                        class="food"
+                        onclick="chooseFood('Burger')">
+
+                        <div class="food-icon">
+                            🍔
+                        </div>
+
+                        <strong>
+                            Burger
+                        </strong>
+
+                        <span>
+                            Respectable choice
+                        </span>
+
+                    </div>
+
+
+                    <!-- Surprise -->
+
+                    <div
+                        class="food"
+                        onclick="chooseFood('Surprise')">
+
+                        <div class="food-icon">
+                            🎁
+                        </div>
+
+                        <strong>
+                            Surprise Me
+                        </strong>
+
+                        <span>
+                            Dangerous choice
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Developer -->
+
+                <div class="developer">
+
+                    Built by
+
+                    <strong>
+                        MD ATIQUL ISLAM (Atik)
+                    </strong>
+
+                    <br>
+
+                    atik.cmttiu1001@gmail.com
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         PAYMENT MODAL
+    ========================================== -->
+
+    <div
+        class="overlay"
+        id="paymentOverlay">
+
+        <div class="payment-modal">
+
+
+            <!-- Close Button -->
+
+            <button
+                class="close"
+                onclick="closePayment()">
+
+                ✕
+
+            </button>
+
+
+            <!-- Emoji -->
+
+            <div class="warning">
+                😳
+            </div>
+
+
+            <!-- Title -->
+
+            <h2>
+                sorry what...
+            </h2>
+
+
+            <p class="subtitle">
+
+                One small fee.
+                That's all. 🥺
+
+            </p>
+
+
+            <!-- Fake Fee -->
+
+            <div class="fee">
+
+                <div class="fee-label">
+
+                    Extremely legitimate
+                    date processing fee
+
+                </div>
+
+
+                <div class="fee-amount">
+
+                    $0.00
+
+                </div>
+
+
+                <div class="fee-label">
+
+                    Yes...
+                    that's suspiciously free.
+
+                </div>
+
+            </div>
+
+
+            <!-- Funny Reaction -->
+
+            <div
+                class="reaction"
+                id="reaction">
+
+                no way he's playing me 😭
+
+            </div>
+
+
+            <!-- Mock Payment -->
+
+            <button
+                class="fake-payment"
+                onclick="fakePayment()">
+
+                💳 Pay Absolutely Nothing
+
+            </button>
+
+
+            <!-- Safety Message -->
+
+            <p class="tiny">
+
+                🔒 MOCK CHECKOUT — This button does not
+                process payments, collect money, or connect
+                to any payment service.
+
+            </p>
+
+
+            <!-- Developer Credit -->
+
+            <div class="developer">
+
+                😂 This extremely serious financial system
+                was developed by
+
+                <br>
+
+                <strong>
+                    MD ATIQUL ISLAM (Atik)
+                </strong>
+
+                <br>
+
+                atik.cmttiu1001@gmail.com
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
